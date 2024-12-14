@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SmartHouseLightbulb</string>
+    <string name="title">Яндекс.Лампочка</string>
+    <string name="current_brightness">Текущая яркость: %d</string>
+    <string name="current_color">Текущий цвет:</string>
+</resources>

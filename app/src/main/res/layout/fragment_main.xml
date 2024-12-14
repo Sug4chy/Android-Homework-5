@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/title_txv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/state_section"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/title_txv">
+
+        <TextView
+            android:id="@+id/state_txv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="OFF" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/state_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/state_err_txv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#BB0000"
+            android:visibility="gone"
+
+            tools:text="Тут будет ошибка"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/brightness_section"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/state_section">
+
+        <LinearLayout
+            android:id="@+id/brightness_text_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/brightness_txv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="Текущая якрость: 100" />
+
+            <TextView
+                android:id="@+id/brightness_err_txv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#BB0000"
+                android:visibility="gone"
+                tools:text="Тут будет ошибка"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/brightness_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:max="100"
+            android:min="0"
+            app:layout_constraintEnd_toEndOf="@id/brightness_text_section"
+            app:layout_constraintStart_toStartOf="@id/brightness_text_section"
+            app:layout_constraintTop_toBottomOf="@id/brightness_text_section" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/color_section"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/brightness_section">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/current_color"
+                tools:text="Текущий цвет: " />
+
+            <Spinner
+                android:id="@+id/colors_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/color_err_txv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAlignment="textEnd"
+                android:textColor="#BB0000"
+                android:visibility="gone"
+                tools:text="Тут будет ошибка"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/color_view"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_height="30dp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
