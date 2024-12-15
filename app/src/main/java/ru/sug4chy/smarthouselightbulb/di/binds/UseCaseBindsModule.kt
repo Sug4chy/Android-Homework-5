@@ -2,6 +2,7 @@ package ru.sug4chy.smarthouselightbulb.di.binds
 
 import dagger.Binds
 import dagger.Module
+import ru.sug4chy.smarthouselightbulb.di.AppComponentScope
 import ru.sug4chy.smarthouselightbulb.domain.brightness.GetCurrentBrightnessUseCase
 import ru.sug4chy.smarthouselightbulb.domain.brightness.SetBrightnessUseCase
 import ru.sug4chy.smarthouselightbulb.domain.brightness.implementation.GetCurrentBrightnessUseCaseImpl
@@ -21,23 +22,30 @@ import ru.sug4chy.smarthouselightbulb.domain.state.implementation.SetStateUseCas
 internal interface UseCaseBindsModule {
 
     @Binds
+    @AppComponentScope
     fun bindGetCurrentStateUseCase(impl: GetCurrentStateUseCaseImpl): GetCurrentStateUseCase
 
     @Binds
+    @AppComponentScope
     fun bindSetCurrentStateUseCase(impl: SetStateUseCaseImpl): SetStateUseCase
 
     @Binds
+    @AppComponentScope
     fun bindGetCurrentBrightnessUseCase(impl: GetCurrentBrightnessUseCaseImpl): GetCurrentBrightnessUseCase
 
     @Binds
+    @AppComponentScope
     fun bindSetBrightnessUseCase(impl: SetBrightnessUseCaseImpl): SetBrightnessUseCase
 
     @Binds
+    @AppComponentScope
     fun bindGetAllColorsUseCase(impl: GetAllColorsUseCaseImpl): GetAllColorsUseCase
 
     @Binds
+    @AppComponentScope
     fun bindGetCurrentColorUseCase(impl: GetCurrentColorUseCaseImpl): GetCurrentColorUseCase
 
     @Binds
+    @AppComponentScope
     fun bindSetColorUseCase(impl: SetColorUseCaseImpl): SetColorUseCase
 }
